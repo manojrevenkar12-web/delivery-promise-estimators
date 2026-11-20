@@ -1,0 +1,10 @@
+# The lake container, mounted read-only into the training job through the Azure Blob CSI driver.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: lake
+spec:
+  accessModes: [ReadOnlyMany]
+  storageClassName: azureblob-fuse-premium
+  resources:
+    requests: {storage: 100Gi}

@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: estimators
+resources:
+  - namespace.yaml
+  - serviceaccounts.yaml
+  - estimator-api.yaml
+  - train-job.yaml
+  - monitoring.yaml
+  - lake.yaml
+configMapGenerator:
+  - name: estimators-env
+    literals:
+      - MLFLOW_TRACKING_URI=http://mlflow.estimators.svc:5000
+      - DPE_LAKE=/lake
+images:
+  - name: dpe
+    newName: REPLACE_ACR.azurecr.io/delivery-promise-estimators
+    newTag: latest

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 258" font-family="Inter, system-ui, sans-serif" role="img" aria-label="Metres walked per order">
+<rect width="760" height="258" fill="#FCFCFB"/>
+<text x="20" y="28" font-size="15" font-weight="600" fill="#1F2430">Metres walked per order</text>
+<text x="20" y="46" font-size="12" fill="#5E6573">Walking per order in the warehouse, same order lines for every design</text>
+<text x="290" y="75" font-size="12" text-anchor="end" fill="#1F2430">As found</text>
+<rect x="300" y="64" width="361.9" height="16" rx="3" fill="#C2410C"/>
+<text x="669.9" y="76" font-size="11" fill="#5E6573">158 m</text>
+<text x="290" y="103" font-size="12" text-anchor="end" fill="#1F2430">Platform</text>
+<rect x="300" y="92" width="163.1" height="16" rx="3" fill="#1D4ED8"/>
+<text x="471.1" y="104" font-size="11" fill="#5E6573">71 m</text>
+<text x="290" y="131" font-size="12" text-anchor="end" fill="#1F2430">Platform, fcfs</text>
+<rect x="300" y="120" width="175.3" height="16" rx="3" fill="#8A8F99"/>
+<text x="483.3" y="132" font-size="11" fill="#5E6573">77 m</text>
+<text x="290" y="159" font-size="12" text-anchor="end" fill="#1F2430">Platform, no reslot</text>
+<rect x="300" y="148" width="234.1" height="16" rx="3" fill="#8A8F99"/>
+<text x="542.1" y="160" font-size="11" fill="#5E6573">102 m</text>
+<text x="290" y="187" font-size="12" text-anchor="end" fill="#1F2430">Platform, return</text>
+<rect x="300" y="176" width="213.6" height="16" rx="3" fill="#8A8F99"/>
+<text x="521.6" y="188" font-size="11" fill="#5E6573">93 m</text>
+<text x="290" y="215" font-size="12" text-anchor="end" fill="#1F2430">Platform, s shape</text>
+<rect x="300" y="204" width="266.7" height="16" rx="3" fill="#8A8F99"/>
+<text x="574.7" y="216" font-size="11" fill="#5E6573">117 m</text>
+</svg>

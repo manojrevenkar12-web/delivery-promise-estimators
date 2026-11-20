@@ -1,0 +1,140 @@
+{
+ "grid": [
+  {
+   "a": 0.1,
+   "cost_vs_as_found_per_month": -6278.442479012205,
+   "driver_hours_per_day": 511.067116431147,
+   "late_per_day": 57.27777777777778,
+   "ok": true,
+   "q": 0.5,
+   "reject_share": 0.028217693579553376,
+   "rejected_per_day": 39.34722222222222
+  },
+  {
+   "a": 0.2,
+   "cost_vs_as_found_per_month": -11840.258016220127,
+   "driver_hours_per_day": 497.68278628717235,
+   "late_per_day": 59.583333333333336,
+   "ok": true,
+   "q": 0.5,
+   "reject_share": 0.034263630749616525,
+   "rejected_per_day": 47.77777777777778
+  },
+  {
+   "a": 0.35,
+   "cost_vs_as_found_per_month": -15752.044506952328,
+   "driver_hours_per_day": 485.7210474509423,
+   "late_per_day": 64.26388888888889,
+   "ok": true,
+   "q": 0.5,
+   "reject_share": 0.04155461264168609,
+   "rejected_per_day": 57.94444444444444
+  },
+  {
+   "a": 0.5,
+   "cost_vs_as_found_per_month": -18445.436946646936,
+   "driver_hours_per_day": 475.6234476818507,
+   "late_per_day": 71.76388888888889,
+   "ok": true,
+   "q": 0.5,
+   "reject_share": 0.04786947947170262,
+   "rejected_per_day": 66.75
+  },
+  {
+   "a": 0.1,
+   "cost_vs_as_found_per_month": -14580.544632487545,
+   "driver_hours_per_day": 494.65833821091707,
+   "late_per_day": 30.65277777777778,
+   "ok": true,
+   "q": 0.6,
+   "reject_share": 0.0446622442678141,
+   "rejected_per_day": 62.27777777777778
+  },
+  {
+   "a": 0.2,
+   "cost_vs_as_found_per_month": -18928.456335935818,
+   "driver_hours_per_day": 481.95612150132297,
+   "late_per_day": 32.583333333333336,
+   "ok": true,
+   "q": 0.6,
+   "reject_share": 0.05321819159744218,
+   "rejected_per_day": 74.20833333333333
+  },
+  {
+   "a": 0.35,
+   "cost_vs_as_found_per_month": -22789.369441817966,
+   "driver_hours_per_day": 470.21472091549265,
+   "late_per_day": 34.458333333333336,
+   "ok": false,
+   "q": 0.6,
+   "reject_share": 0.06154505069822108,
+   "rejected_per_day": 85.81944444444444
+  },
+  {
+   "a": 0.5,
+   "cost_vs_as_found_per_month": -25399.099017236094,
+   "driver_hours_per_day": 460.7887285002635,
+   "late_per_day": 37.875,
+   "ok": false,
+   "q": 0.6,
+   "reject_share": 0.06878623080141039,
+   "rejected_per_day": 95.91666666666667
+  },
+  {
+   "a": 0.1,
+   "cost_vs_as_found_per_month": -13490.265797768585,
+   "driver_hours_per_day": 493.0896387520672,
+   "late_per_day": 13.26388888888889,
+   "ok": true,
+   "q": 0.7,
+   "reject_share": 0.05842745871431702,
+   "rejected_per_day": 81.47222222222223
+  },
+  {
+   "a": 0.2,
+   "cost_vs_as_found_per_month": -17980.597198732954,
+   "driver_hours_per_day": 480.5372451049696,
+   "late_per_day": 14.38888888888889,
+   "ok": false,
+   "q": 0.7,
+   "reject_share": 0.0666746349528875,
+   "rejected_per_day": 92.97222222222223
+  },
+  {
+   "a": 0.35,
+   "cost_vs_as_found_per_month": -22014.098502881665,
+   "driver_hours_per_day": 468.95983211029505,
+   "late_per_day": 14.375,
+   "ok": false,
+   "q": 0.7,
+   "reject_share": 0.07507121655809877,
+   "rejected_per_day": 104.68055555555556
+  },
+  {
+   "a": 0.5,
+   "cost_vs_as_found_per_month": -25222.3084426187,
+   "driver_hours_per_day": 459.0831571831986,
+   "late_per_day": 14.055555555555555,
+   "ok": false,
+   "q": 0.7,
+   "reject_share": 0.08304946313671586,
+   "rejected_per_day": 115.80555555555556
+  }
+ ],
+ "max_reject_share": 0.06,
+ "pick": {
+  "a": 0.2,
+  "cost_vs_as_found_per_month": -18928.456335935818,
+  "driver_hours_per_day": 481.95612150132297,
+  "late_per_day": 32.583333333333336,
+  "ok": true,
+  "q": 0.6,
+  "reject_share": 0.05321819159744218,
+  "rejected_per_day": 74.20833333333333
+ },
+ "served": {
+  "a": 0.2,
+  "q": 0.6
+ },
+ "served_is_pick": true
+}

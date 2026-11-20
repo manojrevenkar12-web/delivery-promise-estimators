@@ -1,0 +1,19 @@
+# The company's route planner and its rules: the same for every design. Owned by Operations Research, not by
+# the estimators. dpe/sim reads this file.
+promise_minutes: 120
+pick_lead_minutes: 10           # an order can leave the warehouse this long after it is placed
+crates_per_van: 40
+max_stops: 7
+max_leg_minutes: 14             # do not add a stop further than this from the last one
+acceptance_leg_share: 0.6       # a stop inside a tour costs this share of the leg from the hub
+rostering:
+  work_minutes_per_order: 15.5  # the planning norm used to size shifts
+  utilisation: 0.85
+  early_hours: [7, 14]          # orders placed in these hours are planned on the early shift
+  late_hours: [14, 21]
+  overtime_after_shift: true    # the late shift stays until every accepted order is out
+rule_of_thumb:                  # what the planner uses when it gets no estimate
+  service_base: 2.0
+  service_per_crate: 0.8
+  travel_factor: 1.0
+  show_rate: 0.9

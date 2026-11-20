@@ -1,0 +1,6 @@
+# What outcomes are worth, to turn operations into money for the management view.
+margin_per_order_eur: 9.5       # contribution lost when an order is turned away
+late_cost_eur: 6.0              # voucher and lost repeat orders per late delivery
+driver_hour_eur: 23.0           # paid driver hour, employer cost
+picker_hour_eur: 21.0
+days_per_month: 26

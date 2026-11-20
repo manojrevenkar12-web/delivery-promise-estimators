@@ -1,0 +1,87 @@
+# The planner calls this service thousands of times a day; it must always answer, so: two or more replicas,
+# a disruption budget, readiness on /health, and the champion fetched before a pod takes traffic.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: estimator-api
+  labels: {app: estimator-api}
+spec:
+  replicas: 2
+  selector:
+    matchLabels: {app: estimator-api}
+  strategy:
+    rollingUpdate: {maxUnavailable: 0, maxSurge: 1}
+  template:
+    metadata:
+      labels: {app: estimator-api, azure.workload.identity/use: "true"}
+    spec:
+      serviceAccountName: estimator-api
+      securityContext: {runAsNonRoot: true, runAsUser: 10001, seccompProfile: {type: RuntimeDefault}}
+      initContainers:
+        - name: fetch-champion
+          image: dpe
+          command: ["python", "-m", "dpe.ops.fetch_model", "--out", "/models", "--alias", "champion"]
+          envFrom: [{configMapRef: {name: estimators-env}}]
+          volumeMounts: [{name: models, mountPath: /models}]
+          securityContext: {allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, capabilities: {drop: [ALL]}}
+          resources:
+            requests: {cpu: 100m, memory: 256Mi}
+            limits: {memory: 512Mi}
+      containers:
+        - name: api
+          image: dpe
+          args: ["uvicorn", "dpe.service.api:app", "--host", "0.0.0.0", "--port", "8080", "--workers", "2"]
+          env:
+            - {name: DPE_MODEL_DIR, value: /models}
+          envFrom: [{configMapRef: {name: estimators-env}}]
+          ports: [{name: http, containerPort: 8080}]
+          readinessProbe:
+            httpGet: {path: /health, port: http}
+            periodSeconds: 5
+          livenessProbe:
+            httpGet: {path: /health, port: http}
+            periodSeconds: 20
+          resources:
+            requests: {cpu: 250m, memory: 512Mi}
+            limits: {memory: 1Gi}
+          volumeMounts: [{name: models, mountPath: /models, readOnly: true}]
+          securityContext: {allowPrivilegeEscalation: false, readOnlyRootFilesystem: true, capabilities: {drop: [ALL]}}
+      volumes:
+        - {name: models, emptyDir: {}}
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: topology.kubernetes.io/zone
+          whenUnsatisfiable: ScheduleAnyway
+          labelSelector:
+            matchLabels: {app: estimator-api}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: estimator-api
+spec:
+  selector: {app: estimator-api}
+  ports: [{name: http, port: 80, targetPort: http}]
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: estimator-api
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels: {app: estimator-api}
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: estimator-api
+spec:
+  scaleTargetRef: {apiVersion: apps/v1, kind: Deployment, name: estimator-api}
+  minReplicas: 2
+  maxReplicas: 8
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target: {type: Utilization, averageUtilization: 65}

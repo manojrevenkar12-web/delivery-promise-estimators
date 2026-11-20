@@ -1,0 +1,72 @@
+name: ci
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.13", cache: pip}
+      - run: pip install -r requirements-dev.txt
+      - run: ruff check .
+      - name: world, features, models, planner, warehouse, service, MLflow job, invariants
+        run: python -m pytest
+      - name: the evaluation runs end to end and the platform beats the hub as found
+        run: python -m dpe.eval.cli quick
+      - name: the development hubs pass the gate; the README matches the reports
+        run: python -m dpe.eval.cli gate --dev && python -m dpe.eval.cli readme --check
+      - name: the held-out run happened once and is locked
+        run: |
+          if [ -f config/heldout.lock ]; then test -f reports/heldout.json && ! python -m dpe.eval.cli heldout; fi
+
+  web:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.13", cache: pip}
+      - run: pip install -r ../requirements.txt
+      - uses: pnpm/action-setup@v4
+        with: {package_json_file: web/package.json}
+      - uses: actions/setup-node@v4
+        with: {node-version: 22, cache: pnpm, cache-dependency-path: web/pnpm-lock.yaml}
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm build
+      - name: dashboard end to end, with axe
+        run: pnpm e2e
+
+  deploy-config:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+      - name: terraform fmt and validate (azurerm)
+        working-directory: infra/terraform
+        run: terraform fmt -check -recursive && terraform init -backend=false && terraform validate
+      - name: kustomize and kubeconform
+        run: |
+          curl -sSfL "https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.4.3/kustomize_v5.4.3_linux_amd64.tar.gz" | tar xz
+          curl -sSfL https://github.com/yannh/kubeconform/releases/download/v0.6.7/kubeconform-linux-amd64.tar.gz | tar xz
+          ./kustomize build deploy/k8s/base > /tmp/k8s.yaml
+          ./kubeconform -strict -summary -ignore-missing-schemas /tmp/k8s.yaml
+
+  image:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t dpe:ci .
+      - name: the image serves the dashboard, the reports and rule-of-thumb estimates without a model
+        run: |
+          docker run -d --name dpe -p 8080:8080 dpe:ci
+          for i in $(seq 1 40); do curl -sf localhost:8080/health && break; sleep 1; done
+          curl -sf localhost:8080/ | grep -q "Delivery promise estimators"
+          curl -sf localhost:8080/api/results > /dev/null || { docker logs dpe; exit 1; }
+          curl -sf -X POST localhost:8080/v1/travel-matrix -H 'content-type: application/json' \
+            -d '{"day": 30, "weekday": 2, "forecast": {"forecast_temp": 12, "forecast_rain_prob": 0.3}}' | grep -q rule_of_thumb

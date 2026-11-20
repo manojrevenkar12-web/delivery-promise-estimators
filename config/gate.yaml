@@ -1,0 +1,6 @@
+# What the platform must show on the held-out hubs before anyone quotes it.
+platform:
+  min_late_reduction: 0.5         # at least half the late deliveries of the hub as found
+  max_cost_vs_as_found: 1.0       # operating cost (turned away, late, driver hours) not above the hub as found
+  max_reject_share: 0.06          # turns away at most 6% of orders
+  coverage_tolerance: 0.08        # actuals under the served quantile within 8 points of the quantile

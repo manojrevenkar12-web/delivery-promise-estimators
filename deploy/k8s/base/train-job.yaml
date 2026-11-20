@@ -1,0 +1,38 @@
+# Weekly retraining on Sunday night, when the hubs are closed: train a challenger, gate it against the
+# champion, register it, and move the alias only if it passed. A rollout restart then fetches the champion.
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: train-job
+spec:
+  schedule: "17 2 * * 0"
+  timeZone: Europe/Berlin
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 4
+  failedJobsHistoryLimit: 4
+  jobTemplate:
+    spec:
+      backoffLimit: 1
+      activeDeadlineSeconds: 7200
+      template:
+        metadata:
+          labels: {app: train-job, azure.workload.identity/use: "true"}
+        spec:
+          serviceAccountName: train-job
+          restartPolicy: Never
+          nodeSelector: {workload: train}
+          tolerations:
+            - {key: workload, operator: Equal, value: train, effect: NoSchedule}
+          securityContext: {runAsNonRoot: true, runAsUser: 10001, seccompProfile: {type: RuntimeDefault}}
+          containers:
+            - name: train
+              image: dpe
+              command: ["sh", "-c", "python -m dpe.ops.train_job --lake \"$DPE_LAKE\" --through \"$(python -m dpe.ops.today)\" --out /tmp/model"]
+              envFrom: [{configMapRef: {name: estimators-env}}]
+              resources:
+                requests: {cpu: "4", memory: 8Gi}
+                limits: {memory: 12Gi}
+              securityContext: {allowPrivilegeEscalation: false, capabilities: {drop: [ALL]}}
+              volumeMounts: [{name: lake, mountPath: /lake, readOnly: true}]
+          volumes:
+            - {name: lake, persistentVolumeClaim: {claimName: lake, readOnly: true}}

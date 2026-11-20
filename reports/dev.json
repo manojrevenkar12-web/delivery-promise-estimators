@@ -1,0 +1,974 @@
+{
+ "designs": {
+  "as_found": {
+   "cost_per_month": 330550.6753270603,
+   "cost_vs_as_found_ci": [
+    0.0,
+    0.0
+   ],
+   "cost_vs_as_found_per_month": 0.0,
+   "cost_vs_platform_ci": [
+    12610.686883340693,
+    25078.400739467907
+   ],
+   "cost_vs_platform_per_month": 18928.456335935818,
+   "days": 72,
+   "drift_retrains": 0,
+   "driver_hours_per_day": 491.72741600586085,
+   "label": "As found: rules of thumb for stops, the map router for travel, a 90% show rate",
+   "late_ci": [
+    171.96840277777778,
+    226.13055555555553
+   ],
+   "late_on_outage_days": 222.83333333333334,
+   "late_per_day": 198.44444444444446,
+   "late_per_day_after_roadworks": 222.89743589743588,
+   "late_share": 0.14464027211159816,
+   "late_vs_platform_per_day": 165.86111111111111,
+   "on_time_share": 0.8416004302874559,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 0,
+   "reject_share": 0.016085977808322875,
+   "rejected_per_day": 22.430555555555557,
+   "retrains": 0,
+   "short_shifts_per_week": 2.6666666666666665,
+   "stop_bias": -2.106681094098812,
+   "stop_coverage": 0.21899631240793557,
+   "stop_mae": 2.451599464713178,
+   "stop_quantile": null,
+   "surplus_drivers_per_day": 2.0833333333333335,
+   "travel_coverage": 0.23392361111111107,
+   "travel_quantile": null
+  },
+  "mean_models": {
+   "cost_per_month": 306283.72071980545,
+   "cost_vs_as_found_ci": [
+    -29182.41278291074,
+    -19344.387454207947
+   ],
+   "cost_vs_as_found_per_month": -24266.95460725483,
+   "cost_vs_platform_ci": [
+    -8637.108842452,
+    -2537.264792765233
+   ],
+   "cost_vs_platform_per_month": -5338.49827131901,
+   "days": 72,
+   "drift_retrains": 0,
+   "driver_hours_per_day": 460.50229681870115,
+   "label": "Mean models: XGBoost on squared error, trained once",
+   "late_ci": [
+    42.277430555555554,
+    61.458333333333336
+   ],
+   "late_on_outage_days": 72.33333333333333,
+   "late_per_day": 51.486111111111114,
+   "late_per_day_after_roadworks": 58.12820512820513,
+   "late_share": 0.03954934866799671,
+   "late_vs_platform_per_day": 18.90277777777778,
+   "on_time_share": 0.8966712484312437,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 0,
+   "reject_share": 0.06640570529293412,
+   "rejected_per_day": 92.59722222222223,
+   "retrains": 0,
+   "short_shifts_per_week": 3.833333333333333,
+   "stop_bias": 0.014654976742844224,
+   "stop_coverage": 0.6143825053245402,
+   "stop_mae": 1.7627374454448512,
+   "stop_quantile": null,
+   "surplus_drivers_per_day": 1.8333333333333333,
+   "travel_coverage": 0.4858055555555556,
+   "travel_quantile": null
+  },
+  "platform": {
+   "cost_per_month": 311622.2189911245,
+   "cost_vs_as_found_ci": [
+    -25078.400739467907,
+    -12610.686883340695
+   ],
+   "cost_vs_as_found_per_month": -18928.456335935818,
+   "cost_vs_platform_ci": [
+    0.0,
+    0.0
+   ],
+   "cost_vs_platform_per_month": 0.0,
+   "days": 72,
+   "drift_retrains": 15,
+   "driver_hours_per_day": 481.95612150132297,
+   "label": "Platform: quantile models chosen by planner replay, retrained through a gate",
+   "late_ci": [
+    26.083333333333332,
+    39.890624999999986
+   ],
+   "late_on_outage_days": 31.666666666666668,
+   "late_per_day": 32.583333333333336,
+   "late_per_day_after_roadworks": 34.17948717948718,
+   "late_share": 0.024680448161590658,
+   "late_vs_platform_per_day": 0.0,
+   "on_time_share": 0.9234148090599414,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 22,
+   "reject_share": 0.05321819159744218,
+   "rejected_per_day": 74.20833333333333,
+   "retrains": 24,
+   "short_shifts_per_week": 2.6666666666666665,
+   "stop_bias": -0.11355905966458726,
+   "stop_coverage": 0.5971343643196525,
+   "stop_mae": 1.7201954936674047,
+   "stop_quantile": 0.6,
+   "surplus_drivers_per_day": 3.8333333333333335,
+   "travel_coverage": 0.5827152777777778,
+   "travel_quantile": 0.6
+  },
+  "platform_mean": {
+   "cost_per_month": 305846.79161098774,
+   "cost_vs_as_found_ci": [
+    -29604.007884279996,
+    -19660.768342579606
+   ],
+   "cost_vs_as_found_per_month": -24703.883716072556,
+   "cost_vs_platform_ci": [
+    -8734.263601210945,
+    -3138.0452345344393
+   ],
+   "cost_vs_platform_per_month": -5775.427380136735,
+   "days": 72,
+   "drift_retrains": 0,
+   "driver_hours_per_day": 461.74235869544583,
+   "label": "Platform, mean instead of quantiles",
+   "late_ci": [
+    37.207638888888894,
+    56.502777777777766
+   ],
+   "late_on_outage_days": 53.833333333333336,
+   "late_per_day": 46.416666666666664,
+   "late_per_day_after_roadworks": 53.82051282051282,
+   "late_share": 0.03561229274114488,
+   "late_vs_platform_per_day": 13.833333333333334,
+   "on_time_share": 0.9014322994481961,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 8,
+   "reject_share": 0.06528018486424032,
+   "rejected_per_day": 91.02777777777777,
+   "retrains": 9,
+   "short_shifts_per_week": 4.083333333333334,
+   "stop_bias": -0.0023095015215338663,
+   "stop_coverage": 0.6130783630640647,
+   "stop_mae": 1.7578814473922444,
+   "stop_quantile": null,
+   "surplus_drivers_per_day": 2.0833333333333335,
+   "travel_coverage": 0.5099583333333333,
+   "travel_quantile": null
+  },
+  "platform_no_fallback": {
+   "cost_per_month": 311942.42080059345,
+   "cost_vs_as_found_ci": [
+    -24740.509614668103,
+    -12390.484729428827
+   ],
+   "cost_vs_as_found_per_month": -18608.254526466866,
+   "cost_vs_platform_ci": [
+    -75.2601395436821,
+    1047.2035993583097
+   ],
+   "cost_vs_platform_per_month": 320.2018094689549,
+   "days": 72,
+   "drift_retrains": 15,
+   "driver_hours_per_day": 482.15129825442983,
+   "label": "Platform, rules of thumb during outages",
+   "late_ci": [
+    26.942013888888887,
+    41.528124999999996
+   ],
+   "late_on_outage_days": 49.166666666666664,
+   "late_per_day": 34.041666666666664,
+   "late_per_day_after_roadworks": 34.743589743589745,
+   "late_share": 0.025783173087037932,
+   "late_vs_platform_per_day": 1.4583333333333333,
+   "on_time_share": 0.9224386939978884,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 22,
+   "reject_share": 0.05314846909300982,
+   "rejected_per_day": 74.11111111111111,
+   "retrains": 24,
+   "short_shifts_per_week": 2.6666666666666665,
+   "stop_bias": -0.11355905966458726,
+   "stop_coverage": 0.5971343643196525,
+   "stop_mae": 1.7201954936674047,
+   "stop_quantile": 0.6,
+   "surplus_drivers_per_day": 3.8333333333333335,
+   "travel_coverage": 0.5827152777777778,
+   "travel_quantile": 0.6
+  },
+  "platform_no_retrain": {
+   "cost_per_month": 312177.5050575188,
+   "cost_vs_as_found_ci": [
+    -23792.981572793262,
+    -12735.030571724767
+   ],
+   "cost_vs_as_found_per_month": -18373.170269541555,
+   "cost_vs_platform_ci": [
+    -2812.75712992674,
+    3286.88653936853
+   ],
+   "cost_vs_platform_per_month": 555.2860663942648,
+   "days": 72,
+   "drift_retrains": 0,
+   "driver_hours_per_day": 481.0148263689463,
+   "label": "Platform, never retrained",
+   "late_ci": [
+    33.61076388888889,
+    49.45902777777778
+   ],
+   "late_on_outage_days": 48.333333333333336,
+   "late_per_day": 41.18055555555556,
+   "late_per_day_after_roadworks": 48.666666666666664,
+   "late_share": 0.03117115222876367,
+   "late_vs_platform_per_day": 8.597222222222221,
+   "on_time_share": 0.917896770852009,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 0,
+   "reject_share": 0.05257076834199884,
+   "rejected_per_day": 73.30555555555556,
+   "retrains": 0,
+   "short_shifts_per_week": 2.6666666666666665,
+   "stop_bias": -0.12186558666184771,
+   "stop_coverage": 0.5959207269303473,
+   "stop_mae": 1.7190596115605525,
+   "stop_quantile": 0.6,
+   "surplus_drivers_per_day": 3.6527777777777777,
+   "travel_coverage": 0.5437847222222223,
+   "travel_quantile": 0.6
+  },
+  "platform_q50": {
+   "cost_per_month": 318710.4173108402,
+   "cost_vs_as_found_ci": [
+    -17964.197520778256,
+    -5112.3677784322435
+   ],
+   "cost_vs_as_found_per_month": -11840.258016220127,
+   "cost_vs_platform_ci": [
+    3985.27435328894,
+    10950.040028803083
+   ],
+   "cost_vs_platform_per_month": 7088.198319715692,
+   "days": 72,
+   "drift_retrains": 19,
+   "driver_hours_per_day": 497.68278628717235,
+   "label": "Platform, the median for stops and travel",
+   "late_ci": [
+    48.48368055555556,
+    71.2642361111111
+   ],
+   "late_on_outage_days": 63.0,
+   "late_per_day": 59.583333333333336,
+   "late_per_day_after_roadworks": 65.46153846153847,
+   "late_share": 0.04424596216918666,
+   "late_vs_platform_per_day": 27.0,
+   "on_time_share": 0.9230064343911233,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 26,
+   "reject_share": 0.034263630749616525,
+   "rejected_per_day": 47.77777777777778,
+   "retrains": 27,
+   "short_shifts_per_week": 2.0,
+   "stop_bias": -0.5729514521636023,
+   "stop_coverage": 0.4969825224861013,
+   "stop_mae": 1.6831300817783326,
+   "stop_quantile": 0.5,
+   "surplus_drivers_per_day": 4.930555555555555,
+   "travel_coverage": 0.48795833333333327,
+   "travel_quantile": 0.5
+  },
+  "platform_q90": {
+   "cost_per_month": 331270.35741502803,
+   "cost_vs_as_found_ci": [
+    -4924.283006060172,
+    6619.923749656618
+   ],
+   "cost_vs_as_found_per_month": 719.6820879676523,
+   "cost_vs_platform_ci": [
+    17137.355991913166,
+    22358.2975485221
+   ],
+   "cost_vs_platform_per_month": 19648.138423903474,
+   "days": 72,
+   "drift_retrains": 15,
+   "driver_hours_per_day": 475.8113325409238,
+   "label": "Platform, the 90th percentile for stops and travel",
+   "late_ci": [
+    0.2777777777777778,
+    0.6111111111111112
+   ],
+   "late_on_outage_days": 0.8333333333333334,
+   "late_per_day": 0.4444444444444444,
+   "late_per_day_after_roadworks": 0.48717948717948717,
+   "late_share": 0.0003686848320755804,
+   "late_vs_platform_per_day": -32.138888888888886,
+   "on_time_share": 0.8641905217235403,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 18,
+   "reject_share": 0.13549074682762605,
+   "rejected_per_day": 188.93055555555554,
+   "retrains": 24,
+   "short_shifts_per_week": 2.6666666666666665,
+   "stop_bias": 2.54261684262212,
+   "stop_coverage": 0.8967154195755166,
+   "stop_mae": 3.2131647028705626,
+   "stop_quantile": 0.9,
+   "surplus_drivers_per_day": 3.888888888888889,
+   "travel_coverage": 0.8699652777777778,
+   "travel_quantile": 0.9
+  },
+  "platform_router_travel": {
+   "cost_per_month": 330586.54792000185,
+   "cost_vs_as_found_ci": [
+    -3965.68568909646,
+    4169.449375943191
+   ],
+   "cost_vs_as_found_per_month": 35.8725929414912,
+   "cost_vs_platform_ci": [
+    15022.764271332784,
+    23030.64229411444
+   ],
+   "cost_vs_platform_per_month": 18964.328928877312,
+   "days": 72,
+   "drift_retrains": 66,
+   "driver_hours_per_day": 505.1865582088473,
+   "label": "Platform, map router for travel",
+   "late_ci": [
+    113.24895833333333,
+    154.94618055555557
+   ],
+   "late_on_outage_days": 139.16666666666666,
+   "late_per_day": 134.45833333333334,
+   "late_per_day_after_roadworks": 166.56410256410257,
+   "late_share": 0.09857548697166248,
+   "late_vs_platform_per_day": 101.875,
+   "on_time_share": 0.8817705531982709,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 65,
+   "reject_share": 0.02180322317177633,
+   "rejected_per_day": 30.40277777777778,
+   "retrains": 66,
+   "short_shifts_per_week": 1.9166666666666665,
+   "stop_bias": -0.11277899177734614,
+   "stop_coverage": 0.5968537779705093,
+   "stop_mae": 1.7194500479176815,
+   "stop_quantile": 0.6,
+   "surplus_drivers_per_day": 4.305555555555555,
+   "travel_coverage": 0.23392361111111107,
+   "travel_quantile": null
+  },
+  "platform_rule_availability": {
+   "cost_per_month": 305919.7391905896,
+   "cost_vs_as_found_ci": [
+    -29303.30673133204,
+    -20187.211620569782
+   ],
+   "cost_vs_as_found_per_month": -24630.936136470766,
+   "cost_vs_platform_ci": [
+    -9283.548853786018,
+    -2532.7176842040517
+   ],
+   "cost_vs_platform_per_month": -5702.4798005349485,
+   "days": 72,
+   "drift_retrains": 15,
+   "driver_hours_per_day": 467.6185716676526,
+   "label": "Platform, a 90% show rate",
+   "late_ci": [
+    28.818749999999998,
+    43.75138888888888
+   ],
+   "late_on_outage_days": 33.833333333333336,
+   "late_per_day": 36.013888888888886,
+   "late_per_day_after_roadworks": 38.794871794871796,
+   "late_share": 0.02747578782291733,
+   "late_vs_platform_per_day": 3.4305555555555554,
+   "on_time_share": 0.9141715970437658,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 22,
+   "reject_share": 0.060001195242933125,
+   "rejected_per_day": 83.66666666666667,
+   "retrains": 24,
+   "short_shifts_per_week": 2.6666666666666665,
+   "stop_bias": -0.11355905966458726,
+   "stop_coverage": 0.5971343643196525,
+   "stop_mae": 1.7201954936674047,
+   "stop_quantile": 0.6,
+   "surplus_drivers_per_day": 2.0833333333333335,
+   "travel_coverage": 0.5827152777777778,
+   "travel_quantile": 0.6
+  },
+  "platform_rule_service": {
+   "cost_per_month": 320200.4141900859,
+   "cost_vs_as_found_ci": [
+    -15650.317811846344,
+    -5229.403185146521
+   ],
+   "cost_vs_as_found_per_month": -10350.261136974477,
+   "cost_vs_platform_ci": [
+    5210.240706946328,
+    12064.554358370446
+   ],
+   "cost_vs_platform_per_month": 8578.195198961343,
+   "days": 72,
+   "drift_retrains": 66,
+   "driver_hours_per_day": 496.8114971591923,
+   "label": "Platform, rule of thumb for stop times",
+   "late_ci": [
+    80.08020833333333,
+    111.90520833333332
+   ],
+   "late_on_outage_days": 75.66666666666667,
+   "late_per_day": 95.91666666666667,
+   "late_per_day_after_roadworks": 107.48717948717949,
+   "late_share": 0.07045213417122337,
+   "late_vs_platform_per_day": 63.333333333333336,
+   "on_time_share": 0.9075678798382438,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 65,
+   "reject_share": 0.023645889360345822,
+   "rejected_per_day": 32.97222222222222,
+   "retrains": 66,
+   "short_shifts_per_week": 1.9166666666666665,
+   "stop_bias": -2.106681094098812,
+   "stop_coverage": 0.21899631240793557,
+   "stop_mae": 2.451599464713178,
+   "stop_quantile": null,
+   "surplus_drivers_per_day": 4.305555555555555,
+   "travel_coverage": 0.5782916666666666,
+   "travel_quantile": 0.6
+  },
+  "platform_weekly_only": {
+   "cost_per_month": 312263.5394797988,
+   "cost_vs_as_found_ci": [
+    -24093.321005726328,
+    -12299.153671137745
+   ],
+   "cost_vs_as_found_per_month": -18287.135847261532,
+   "cost_vs_platform_ci": [
+    -1818.3759821696317,
+    3129.2152604163575
+   ],
+   "cost_vs_platform_per_month": 641.320488674285,
+   "days": 72,
+   "drift_retrains": 0,
+   "driver_hours_per_day": 483.4591193456316,
+   "label": "Platform, weekly retrain without drift alarms",
+   "late_ci": [
+    29.554861111111112,
+    43.94479166666666
+   ],
+   "late_on_outage_days": 38.666666666666664,
+   "late_per_day": 36.43055555555556,
+   "late_per_day_after_roadworks": 41.282051282051285,
+   "late_share": 0.027522165678610776,
+   "late_vs_platform_per_day": 3.8472222222222223,
+   "on_time_share": 0.923145879399988,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 8,
+   "reject_share": 0.05072810215342935,
+   "rejected_per_day": 70.73611111111111,
+   "retrains": 9,
+   "short_shifts_per_week": 2.5,
+   "stop_bias": -0.11649067334091558,
+   "stop_coverage": 0.5960288726057166,
+   "stop_mae": 1.7202262977450269,
+   "stop_quantile": 0.6,
+   "surplus_drivers_per_day": 3.9722222222222223,
+   "travel_coverage": 0.5702152777777777,
+   "travel_quantile": 0.6
+  },
+  "sweep_q0.5_a0.1": {
+   "cost_per_month": 324272.23284804815,
+   "cost_vs_as_found_ci": [
+    -12895.402531617841,
+    1049.479037705247
+   ],
+   "cost_vs_as_found_per_month": -6278.442479012205,
+   "cost_vs_platform_ci": [
+    9309.273895926339,
+    16896.69056123843
+   ],
+   "cost_vs_platform_per_month": 12650.013856923617,
+   "days": 72,
+   "drift_retrains": 19,
+   "driver_hours_per_day": 511.067116431147,
+   "label": "Stops and travel at the 50th percentile, roster to the 10th percentile of shows",
+   "late_ci": [
+    46.624652777777776,
+    68.51909722222219
+   ],
+   "late_on_outage_days": 63.333333333333336,
+   "late_per_day": 57.27777777777778,
+   "late_per_day_after_roadworks": 63.282051282051285,
+   "late_share": 0.04226925639317378,
+   "late_vs_platform_per_day": 24.694444444444443,
+   "on_time_share": 0.930705790952011,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 26,
+   "reject_share": 0.028217693579553376,
+   "rejected_per_day": 39.34722222222222,
+   "retrains": 27,
+   "short_shifts_per_week": 1.3333333333333333,
+   "stop_bias": -0.5729514521636023,
+   "stop_coverage": 0.4969825224861013,
+   "stop_mae": 1.6831300817783326,
+   "stop_quantile": 0.5,
+   "surplus_drivers_per_day": 6.333333333333333,
+   "travel_coverage": 0.48795833333333327,
+   "travel_quantile": 0.5
+  },
+  "sweep_q0.5_a0.2": {
+   "cost_per_month": 318710.4173108402,
+   "cost_vs_as_found_ci": [
+    -17964.197520778256,
+    -5112.3677784322435
+   ],
+   "cost_vs_as_found_per_month": -11840.258016220127,
+   "cost_vs_platform_ci": [
+    3985.27435328894,
+    10950.040028803083
+   ],
+   "cost_vs_platform_per_month": 7088.198319715692,
+   "days": 72,
+   "drift_retrains": 19,
+   "driver_hours_per_day": 497.68278628717235,
+   "label": "Stops and travel at the 50th percentile, roster to the 20th percentile of shows",
+   "late_ci": [
+    48.48368055555556,
+    71.2642361111111
+   ],
+   "late_on_outage_days": 63.0,
+   "late_per_day": 59.583333333333336,
+   "late_per_day_after_roadworks": 65.46153846153847,
+   "late_share": 0.04424596216918666,
+   "late_vs_platform_per_day": 27.0,
+   "on_time_share": 0.9230064343911233,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 26,
+   "reject_share": 0.034263630749616525,
+   "rejected_per_day": 47.77777777777778,
+   "retrains": 27,
+   "short_shifts_per_week": 2.0,
+   "stop_bias": -0.5729514521636023,
+   "stop_coverage": 0.4969825224861013,
+   "stop_mae": 1.6831300817783326,
+   "stop_quantile": 0.5,
+   "surplus_drivers_per_day": 4.930555555555555,
+   "travel_coverage": 0.48795833333333327,
+   "travel_quantile": 0.5
+  },
+  "sweep_q0.5_a0.35": {
+   "cost_per_month": 314798.630820108,
+   "cost_vs_as_found_ci": [
+    -21125.972314739436,
+    -9914.448086141307
+   ],
+   "cost_vs_as_found_per_month": -15752.044506952328,
+   "cost_vs_platform_ci": [
+    107.07737446707492,
+    6567.342046124887
+   ],
+   "cost_vs_platform_per_month": 3176.4118289834887,
+   "days": 72,
+   "drift_retrains": 19,
+   "driver_hours_per_day": 485.7210474509423,
+   "label": "Stops and travel at the 50th percentile, roster to the 35th percentile of shows",
+   "late_ci": [
+    52.206250000000004,
+    76.26388888888889
+   ],
+   "late_on_outage_days": 75.16666666666667,
+   "late_per_day": 64.26388888888889,
+   "late_per_day_after_roadworks": 70.71794871794872,
+   "late_share": 0.048084717228191964,
+   "late_vs_platform_per_day": 31.680555555555557,
+   "on_time_share": 0.9123588119285245,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 26,
+   "reject_share": 0.04155461264168609,
+   "rejected_per_day": 57.94444444444444,
+   "retrains": 27,
+   "short_shifts_per_week": 2.5,
+   "stop_bias": -0.5729514521636023,
+   "stop_coverage": 0.4969825224861013,
+   "stop_mae": 1.6831300817783326,
+   "stop_quantile": 0.5,
+   "surplus_drivers_per_day": 3.6666666666666665,
+   "travel_coverage": 0.48795833333333327,
+   "travel_quantile": 0.5
+  },
+  "sweep_q0.5_a0.5": {
+   "cost_per_month": 312105.2383804134,
+   "cost_vs_as_found_ci": [
+    -23388.253705205745,
+    -13092.35839435551
+   ],
+   "cost_vs_as_found_per_month": -18445.436946646936,
+   "cost_vs_platform_ci": [
+    -3154.1188048803224,
+    4237.35844520015
+   ],
+   "cost_vs_platform_per_month": 483.01938928888393,
+   "days": 72,
+   "drift_retrains": 19,
+   "driver_hours_per_day": 475.6234476818507,
+   "label": "Stops and travel at the 50th percentile, roster to the 50th percentile of shows",
+   "late_ci": [
+    58.65277777777778,
+    85.72256944444445
+   ],
+   "late_on_outage_days": 78.33333333333333,
+   "late_per_day": 71.76388888888889,
+   "late_per_day_after_roadworks": 75.43589743589743,
+   "late_share": 0.054052640388317016,
+   "late_vs_platform_per_day": 39.18055555555556,
+   "on_time_share": 0.9006653518994402,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 26,
+   "reject_share": 0.04786947947170262,
+   "rejected_per_day": 66.75,
+   "retrains": 27,
+   "short_shifts_per_week": 2.833333333333333,
+   "stop_bias": -0.5729514521636023,
+   "stop_coverage": 0.4969825224861013,
+   "stop_mae": 1.6831300817783326,
+   "stop_quantile": 0.5,
+   "surplus_drivers_per_day": 2.736111111111111,
+   "travel_coverage": 0.48795833333333327,
+   "travel_quantile": 0.5
+  },
+  "sweep_q0.6_a0.1": {
+   "cost_per_month": 315970.13069457276,
+   "cost_vs_as_found_ci": [
+    -21540.545614437375,
+    -7539.285949421486
+   ],
+   "cost_vs_as_found_per_month": -14580.544632487545,
+   "cost_vs_platform_ci": [
+    3076.4160882558213,
+    5533.618126684545
+   ],
+   "cost_vs_platform_per_month": 4347.911703448277,
+   "days": 72,
+   "drift_retrains": 15,
+   "driver_hours_per_day": 494.65833821091707,
+   "label": "Stops and travel at the 60th percentile, roster to the 10th percentile of shows",
+   "late_ci": [
+    24.860069444444445,
+    36.93125
+   ],
+   "late_on_outage_days": 27.5,
+   "late_per_day": 30.65277777777778,
+   "late_per_day_after_roadworks": 33.282051282051285,
+   "late_share": 0.02301019663448506,
+   "late_vs_platform_per_day": -1.9305555555555556,
+   "on_time_share": 0.9333552461204406,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 22,
+   "reject_share": 0.0446622442678141,
+   "rejected_per_day": 62.27777777777778,
+   "retrains": 24,
+   "short_shifts_per_week": 2.083333333333333,
+   "stop_bias": -0.11355905966458726,
+   "stop_coverage": 0.5971343643196525,
+   "stop_mae": 1.7201954936674047,
+   "stop_quantile": 0.6,
+   "surplus_drivers_per_day": 5.027777777777778,
+   "travel_coverage": 0.5827152777777778,
+   "travel_quantile": 0.6
+  },
+  "sweep_q0.6_a0.2": {
+   "cost_per_month": 311622.2189911245,
+   "cost_vs_as_found_ci": [
+    -25078.400739467907,
+    -12610.686883340695
+   ],
+   "cost_vs_as_found_per_month": -18928.456335935818,
+   "cost_vs_platform_ci": [
+    0.0,
+    0.0
+   ],
+   "cost_vs_platform_per_month": 0.0,
+   "days": 72,
+   "drift_retrains": 15,
+   "driver_hours_per_day": 481.95612150132297,
+   "label": "Stops and travel at the 60th percentile, roster to the 20th percentile of shows",
+   "late_ci": [
+    26.083333333333332,
+    39.890624999999986
+   ],
+   "late_on_outage_days": 31.666666666666668,
+   "late_per_day": 32.583333333333336,
+   "late_per_day_after_roadworks": 34.17948717948718,
+   "late_share": 0.024680448161590658,
+   "late_vs_platform_per_day": 0.0,
+   "on_time_share": 0.9234148090599414,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 22,
+   "reject_share": 0.05321819159744218,
+   "rejected_per_day": 74.20833333333333,
+   "retrains": 24,
+   "short_shifts_per_week": 2.6666666666666665,
+   "stop_bias": -0.11355905966458726,
+   "stop_coverage": 0.5971343643196525,
+   "stop_mae": 1.7201954936674047,
+   "stop_quantile": 0.6,
+   "surplus_drivers_per_day": 3.8333333333333335,
+   "travel_coverage": 0.5827152777777778,
+   "travel_quantile": 0.6
+  },
+  "sweep_q0.6_a0.35": {
+   "cost_per_month": 307761.30588524236,
+   "cost_vs_as_found_ci": [
+    -28469.87808500928,
+    -16992.213000610478
+   ],
+   "cost_vs_as_found_per_month": -22789.369441817966,
+   "cost_vs_platform_ci": [
+    -4891.8815495741965,
+    -2844.4285074527297
+   ],
+   "cost_vs_platform_per_month": -3860.9131058821454,
+   "days": 72,
+   "drift_retrains": 15,
+   "driver_hours_per_day": 470.21472091549265,
+   "label": "Stops and travel at the 60th percentile, roster to the 35th percentile of shows",
+   "late_ci": [
+    28.20798611111111,
+    40.888888888888886
+   ],
+   "late_on_outage_days": 35.166666666666664,
+   "late_per_day": 34.458333333333336,
+   "late_per_day_after_roadworks": 37.69230769230769,
+   "late_share": 0.02633226843842537,
+   "late_vs_platform_per_day": 1.875,
+   "on_time_share": 0.9137433016593957,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 22,
+   "reject_share": 0.06154505069822108,
+   "rejected_per_day": 85.81944444444444,
+   "retrains": 24,
+   "short_shifts_per_week": 3.166666666666667,
+   "stop_bias": -0.11355905966458726,
+   "stop_coverage": 0.5971343643196525,
+   "stop_mae": 1.7201954936674047,
+   "stop_quantile": 0.6,
+   "surplus_drivers_per_day": 2.8194444444444446,
+   "travel_coverage": 0.5827152777777778,
+   "travel_quantile": 0.6
+  },
+  "sweep_q0.6_a0.5": {
+   "cost_per_month": 305151.57630982425,
+   "cost_vs_as_found_ci": [
+    -30647.97680261773,
+    -20157.958761662994
+   ],
+   "cost_vs_as_found_per_month": -25399.099017236094,
+   "cost_vs_platform_ci": [
+    -8224.253812818073,
+    -4741.85713566467
+   ],
+   "cost_vs_platform_per_month": -6470.642681300277,
+   "days": 72,
+   "drift_retrains": 15,
+   "driver_hours_per_day": 460.7887285002635,
+   "label": "Stops and travel at the 60th percentile, roster to the 50th percentile of shows",
+   "late_ci": [
+    30.444444444444443,
+    45.585069444444436
+   ],
+   "late_on_outage_days": 36.333333333333336,
+   "late_per_day": 37.875,
+   "late_per_day_after_roadworks": 40.333333333333336,
+   "late_share": 0.02916827108201771,
+   "late_vs_platform_per_day": 5.291666666666667,
+   "on_time_share": 0.9040518735432976,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 22,
+   "reject_share": 0.06878623080141039,
+   "rejected_per_day": 95.91666666666667,
+   "retrains": 24,
+   "short_shifts_per_week": 3.75,
+   "stop_bias": -0.11355905966458726,
+   "stop_coverage": 0.5971343643196525,
+   "stop_mae": 1.7201954936674047,
+   "stop_quantile": 0.6,
+   "surplus_drivers_per_day": 2.0277777777777777,
+   "travel_coverage": 0.5827152777777778,
+   "travel_quantile": 0.6
+  },
+  "sweep_q0.7_a0.1": {
+   "cost_per_month": 317060.4095292918,
+   "cost_vs_as_found_ci": [
+    -20309.246461232822,
+    -6472.53938027592
+   ],
+   "cost_vs_as_found_per_month": -13490.265797768585,
+   "cost_vs_platform_ci": [
+    3830.6364889588876,
+    7015.574617647811
+   ],
+   "cost_vs_platform_per_month": 5438.190538167234,
+   "days": 72,
+   "drift_retrains": 15,
+   "driver_hours_per_day": 493.0896387520672,
+   "label": "Stops and travel at the 70th percentile, roster to the 10th percentile of shows",
+   "late_ci": [
+    10.61111111111111,
+    16.055902777777778
+   ],
+   "late_on_outage_days": 12.333333333333334,
+   "late_per_day": 13.26388888888889,
+   "late_per_day_after_roadworks": 15.58974358974359,
+   "late_share": 0.010102399187576694,
+   "late_vs_platform_per_day": -19.319444444444443,
+   "on_time_share": 0.932060399609554,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 21,
+   "reject_share": 0.05842745871431702,
+   "rejected_per_day": 81.47222222222223,
+   "retrains": 24,
+   "short_shifts_per_week": 2.083333333333333,
+   "stop_bias": 0.4193872819753847,
+   "stop_coverage": 0.6935777292454489,
+   "stop_mae": 1.872155275485073,
+   "stop_quantile": 0.7,
+   "surplus_drivers_per_day": 5.111111111111111,
+   "travel_coverage": 0.6727013888888889,
+   "travel_quantile": 0.7
+  },
+  "sweep_q0.7_a0.2": {
+   "cost_per_month": 312570.0781283274,
+   "cost_vs_as_found_ci": [
+    -24000.578960292485,
+    -11630.061377662207
+   ],
+   "cost_vs_as_found_per_month": -17980.597198732954,
+   "cost_vs_platform_ci": [
+    -250.9863809782526,
+    2133.632932233245
+   ],
+   "cost_vs_platform_per_month": 947.8591372028658,
+   "days": 72,
+   "drift_retrains": 15,
+   "driver_hours_per_day": 480.5372451049696,
+   "label": "Stops and travel at the 70th percentile, roster to the 20th percentile of shows",
+   "late_ci": [
+    11.055208333333333,
+    18.349305555555542
+   ],
+   "late_on_outage_days": 13.5,
+   "late_per_day": 14.38888888888889,
+   "late_per_day_after_roadworks": 17.46153846153846,
+   "late_share": 0.011056091522240246,
+   "late_vs_platform_per_day": -18.194444444444443,
+   "on_time_share": 0.9230064343911233,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 21,
+   "reject_share": 0.0666746349528875,
+   "rejected_per_day": 92.97222222222223,
+   "retrains": 24,
+   "short_shifts_per_week": 2.6666666666666665,
+   "stop_bias": 0.4193872819753847,
+   "stop_coverage": 0.6935777292454489,
+   "stop_mae": 1.872155275485073,
+   "stop_quantile": 0.7,
+   "surplus_drivers_per_day": 3.9305555555555554,
+   "travel_coverage": 0.6727013888888889,
+   "travel_quantile": 0.7
+  },
+  "sweep_q0.7_a0.35": {
+   "cost_per_month": 308536.5768241786,
+   "cost_vs_as_found_ci": [
+    -27668.291240904637,
+    -16210.979932176071
+   ],
+   "cost_vs_as_found_per_month": -22014.098502881665,
+   "cost_vs_platform_ci": [
+    -4400.952271073486,
+    -1735.005843942722
+   ],
+   "cost_vs_platform_per_month": -3085.642166945846,
+   "days": 72,
+   "drift_retrains": 15,
+   "driver_hours_per_day": 468.95983211029505,
+   "label": "Stops and travel at the 70th percentile, roster to the 35th percentile of shows",
+   "late_ci": [
+    11.471874999999999,
+    17.79201388888889
+   ],
+   "late_on_outage_days": 9.5,
+   "late_per_day": 14.375,
+   "late_per_day_after_roadworks": 16.564102564102566,
+   "late_share": 0.01114569087130227,
+   "late_vs_platform_per_day": -18.208333333333332,
+   "on_time_share": 0.9146198131436881,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 21,
+   "reject_share": 0.07507121655809877,
+   "rejected_per_day": 104.68055555555556,
+   "retrains": 24,
+   "short_shifts_per_week": 3.166666666666667,
+   "stop_bias": 0.4193872819753847,
+   "stop_coverage": 0.6935777292454489,
+   "stop_mae": 1.872155275485073,
+   "stop_quantile": 0.7,
+   "surplus_drivers_per_day": 2.9166666666666665,
+   "travel_coverage": 0.6727013888888889,
+   "travel_quantile": 0.7
+  },
+  "sweep_q0.7_a0.5": {
+   "cost_per_month": 305328.3668844416,
+   "cost_vs_as_found_ci": [
+    -30536.15802881921,
+    -19818.962637612203
+   ],
+   "cost_vs_as_found_per_month": -25222.3084426187,
+   "cost_vs_platform_ci": [
+    -8036.0723967751965,
+    -4490.224042164741
+   ],
+   "cost_vs_platform_per_month": -6293.8521066828835,
+   "days": 72,
+   "drift_retrains": 15,
+   "driver_hours_per_day": 459.0831571831986,
+   "label": "Stops and travel at the 70th percentile, roster to the 50th percentile of shows",
+   "late_ci": [
+    10.805555555555555,
+    17.820486111111105
+   ],
+   "late_on_outage_days": 13.166666666666666,
+   "late_per_day": 14.055555555555555,
+   "late_per_day_after_roadworks": 17.28205128205128,
+   "late_share": 0.010992830762546165,
+   "late_vs_platform_per_day": -18.52777777777778,
+   "on_time_share": 0.9068706547939202,
+   "orders_per_day": 1394.4166666666667,
+   "promoted": 21,
+   "reject_share": 0.08304946313671586,
+   "rejected_per_day": 115.80555555555556,
+   "retrains": 24,
+   "short_shifts_per_week": 3.75,
+   "stop_bias": 0.4193872819753847,
+   "stop_coverage": 0.6935777292454489,
+   "stop_mae": 1.872155275485073,
+   "stop_quantile": 0.7,
+   "surplus_drivers_per_day": 2.111111111111111,
+   "travel_coverage": 0.6727013888888889,
+   "travel_quantile": 0.7
+  }
+ },
+ "world": {
+  "days": 72,
+  "hubs": 3,
+  "orders": 100398,
+  "seeds": [
+   9101,
+   9102,
+   9103
+  ]
+ }
+}

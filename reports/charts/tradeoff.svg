@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" font-family="Inter, system-ui, sans-serif" role="img" aria-label="Late deliveries against orders turned away">
+<rect width="760" height="420" fill="#FCFCFB"/>
+<text x="20" y="28" font-size="15" font-weight="600" fill="#1F2430">Late deliveries against orders turned away</text>
+<text x="20" y="46" font-size="12" fill="#5E6573">Each point: the percentile of stop and travel time given to the planner, averaged over development hubs and days</text>
+<line x1="70" x2="730" y1="364.0" y2="364.0" stroke="#E4E6EA"/>
+<text x="62" y="368.0" font-size="11" text-anchor="end" fill="#5E6573">0</text>
+<line x1="70" x2="730" y1="287.0" y2="287.0" stroke="#E4E6EA"/>
+<text x="62" y="291.0" font-size="11" text-anchor="end" fill="#5E6573">55</text>
+<line x1="70" x2="730" y1="210.0" y2="210.0" stroke="#E4E6EA"/>
+<text x="62" y="214.0" font-size="11" text-anchor="end" fill="#5E6573">109</text>
+<line x1="70" x2="730" y1="133.0" y2="133.0" stroke="#E4E6EA"/>
+<text x="62" y="137.0" font-size="11" text-anchor="end" fill="#5E6573">164</text>
+<line x1="70" x2="730" y1="56.0" y2="56.0" stroke="#E4E6EA"/>
+<text x="62" y="60.0" font-size="11" text-anchor="end" fill="#5E6573">218</text>
+<text x="70.0" y="382" font-size="11" text-anchor="middle" fill="#5E6573">0</text>
+<text x="235.0" y="382" font-size="11" text-anchor="middle" fill="#5E6573">52</text>
+<text x="400.0" y="382" font-size="11" text-anchor="middle" fill="#5E6573">104</text>
+<text x="565.0" y="382" font-size="11" text-anchor="middle" fill="#5E6573">156</text>
+<text x="730.0" y="382" font-size="11" text-anchor="middle" fill="#5E6573">208</text>
+<text x="400.0" y="406" font-size="12" text-anchor="middle" fill="#5E6573">Orders turned away per day</text>
+<text x="18" y="210.0" font-size="12" fill="#5E6573" transform="rotate(-90 18 210.0)" text-anchor="middle">Late deliveries per day</text>
+<polyline fill="none" stroke="#1D4ED8" stroke-width="2" points="221.7,279.9 305.7,318.0 365.3,343.7 670.0,363.4"/>
+<circle cx="221.7" cy="279.9" r="4.5" fill="#1D4ED8" stroke="#FCFCFB" stroke-width="2"/>
+<text x="230.7" y="271.9" font-size="11" fill="#1F2430">50th</text>
+<circle cx="305.7" cy="318.0" r="6" fill="#1D4ED8" stroke="#FCFCFB" stroke-width="2"/>
+<text x="314.7" y="310.0" font-size="11" fill="#1F2430" font-weight="600">60th (served)</text>
+<circle cx="365.3" cy="343.7" r="4.5" fill="#1D4ED8" stroke="#FCFCFB" stroke-width="2"/>
+<text x="374.3" y="335.7" font-size="11" fill="#1F2430">70th</text>
+<circle cx="670.0" cy="363.4" r="4.5" fill="#1D4ED8" stroke="#FCFCFB" stroke-width="2"/>
+<text x="679.0" y="355.4" font-size="11" fill="#1F2430">90th</text>
+<rect x="136.2" y="79.0" width="10" height="10" fill="#C2410C" stroke="#FCFCFB" stroke-width="2"/>
+<text x="151.2" y="88.0" font-size="11" fill="#1F2430">As found</text>
+<rect x="359.1" y="286.4" width="10" height="10" fill="#00897B" stroke="#FCFCFB" stroke-width="2"/>
+<text x="374.1" y="295.4" font-size="11" fill="#1F2430">Mean models</text>
+</svg>

@@ -1,0 +1,89 @@
+# The simulated hubs: the truth. Only dpe/world reads this file (and heldout.yaml over it).
+seeds: [9101, 9102, 9103]       # development hubs
+start: "2026-09-07"             # a Monday
+history_days: 28                # logs before the evaluation starts
+eval_days: 28
+
+hub:
+  half_width_km: 6.0            # customers in a 12 x 12 km square around the hub
+  zones_per_side: 4
+  addresses: 6000
+  regulars_share: 0.55          # orders from the 20% most frequent addresses
+  router_kmh: 27.0              # what a map router assumes, door to door
+  detour: 1.30                  # street distance over Manhattan distance
+
+orders:
+  per_day: 1350
+  weekday_factor: [0.88, 0.90, 0.95, 1.00, 1.18, 1.30, 0.0]   # Monday..Sunday, closed on Sunday
+  first_hour: 7
+  last_hour: 20                 # orders taken until 20:59
+  hour_profile: [0.035, 0.055, 0.07, 0.075, 0.075, 0.07, 0.065, 0.065, 0.07, 0.08, 0.095, 0.095, 0.08, 0.07]
+  hot_per_10c: 0.22             # more orders per 10 degrees above 18
+  crates_mean: 2.3
+  empties_share: 0.6
+  items_mean: 3.0
+
+service:                        # minutes at the door, the truth
+  base: 1.4
+  per_crate: 0.55
+  stairs_per_floor: 0.16        # each floor without a lift makes every crate this much slower
+  per_empty: 0.22
+  per_item: 0.06
+  building: [0.0, 0.7, 1.1]     # house, apartment, office
+  parking_sd: 0.7               # per address, hidden; on top of the zone's parking
+  zone_parking: [0.2, 2.2]      # range across zones
+  customer_sd: 0.18             # per address, hidden, multiplicative
+  rain: 0.12
+  new_driver: 0.15              # drivers in their first 45 days
+  noise_sigma: 0.28
+  wait_prob: 0.04               # nobody opens at first
+  wait_minutes: [3, 14]
+
+travel:
+  rush_amp: [0.15, 0.75]        # range across zones
+  morning_peak: 8.0
+  evening_peak: 17.5
+  saturday: 0.9
+  rain: 1.13
+  noise_sigma: 0.13
+  legs_logged_per_day: 2000
+
+drivers:
+  pool: 95
+  hired_during: 8               # join during the period
+  base_show: 0.935
+  new_penalty: 0.06             # first 45 days
+  monday_penalty: 0.035
+  saturday_late_penalty: 0.04
+  rain_penalty: 0.02
+  driver_sd: 0.035              # per driver, hidden
+  flu_waves: [1, 2]             # per hub over the whole period
+  flu_days: [6, 12]
+  flu_penalty: [0.06, 0.13]
+
+weather:
+  temp_start: 20.0
+  temp_end: 6.0
+  temp_sd: 2.5
+  rain_prob: 0.35
+  forecast_temp_sd: 1.5
+
+regime:                         # road works in some zones from this evaluation day on
+  roadworks_eval_day: 12
+  roadworks_zones: 3
+  roadworks_factor: 1.4
+
+outages:                        # the estimator service is unreachable
+  per_eval: 2
+  minutes: [90, 200]
+  window: [600, 1140]           # between 10:00 and 19:00
+
+warehouse:
+  aisles: 16
+  slots_per_aisle: 30           # per side
+  aisle_length_m: 45
+  aisle_gap_m: 4.0
+  skus: 900
+  pick_seconds_per_crate: 9
+  pick_seconds_per_item: 5
+  walk_m_per_s: 1.1

@@ -1,0 +1,48 @@
+{
+ "days": 18,
+ "designs": {
+  "as_found": {
+   "cost_per_month": 40817.350648148196,
+   "metres_per_order": 158.1415064038222,
+   "minutes_per_order": 3.2415632820759925,
+   "orders_per_cart": 4.25906292749658,
+   "picker_hours_per_day": 74.75705246913589
+  },
+  "platform": {
+   "cost_per_month": 24244.898670033712,
+   "metres_per_order": 71.27739189786004,
+   "minutes_per_order": 1.9254403350159597,
+   "orders_per_cart": 4.388125440451022,
+   "picker_hours_per_day": 44.40457631874306
+  },
+  "platform_fcfs": {
+   "cost_per_month": 25263.81525252526,
+   "metres_per_order": 76.61801903079456,
+   "minutes_per_order": 2.0063589279392073,
+   "orders_per_cart": 4.25906292749658,
+   "picker_hours_per_day": 46.27072390572392
+  },
+  "platform_no_reslot": {
+   "cost_per_month": 30159.73781144779,
+   "metres_per_order": 102.27988115790741,
+   "minutes_per_order": 2.395175020774248,
+   "orders_per_cart": 4.366584852734923,
+   "picker_hours_per_day": 55.23761503928167
+  },
+  "platform_return": {
+   "cost_per_month": 28454.410833333295,
+   "metres_per_order": 93.34145019472437,
+   "minutes_per_order": 2.259744248604807,
+   "orders_per_cart": 4.388125440451022,
+   "picker_hours_per_day": 52.11430555555549
+  },
+  "platform_s_shape": {
+   "cost_per_month": 32882.68684343432,
+   "metres_per_order": 116.5521540129281,
+   "minutes_per_order": 2.611421579183652,
+   "orders_per_cart": 4.388125440451022,
+   "picker_hours_per_day": 60.22470117845113
+  }
+ },
+ "hubs": 3
+}

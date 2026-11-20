@@ -1,0 +1,12 @@
+# Scraped by Azure Monitor managed Prometheus: request counts, fallbacks and latency from /metrics.
+apiVersion: azmonitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: estimator-api
+spec:
+  selector:
+    matchLabels: {app: estimator-api}
+  podMetricsEndpoints:
+    - port: http
+      path: /metrics
+      interval: 30s

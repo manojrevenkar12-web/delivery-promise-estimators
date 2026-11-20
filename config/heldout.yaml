@@ -1,0 +1,2 @@
+# Held-out hubs: run once with `python -m dpe.eval.cli heldout`, which writes config/heldout.lock.
+seeds: [9201, 9202, 9203]

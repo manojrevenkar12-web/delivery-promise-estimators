@@ -1,0 +1,320 @@
+{
+ "options": [
+  {
+   "area": "Route planning",
+   "clear": true,
+   "effort_weeks": 4,
+   "key": "travel_model",
+   "label": "Travel-time correction by zone and hour",
+   "late_avoided_per_day": 101.875,
+   "reject_share_without": 0.02180322317177633,
+   "value_ci": [
+    15022.764271332784,
+    23030.64229411444
+   ],
+   "value_per_effort_week": 4741.082232219328,
+   "value_per_month": 18964.328928877312
+  },
+  {
+   "area": "Warehouse",
+   "clear": null,
+   "effort_weeks": 2,
+   "key": "reslot",
+   "label": "Busiest SKUs nearest pack-out",
+   "late_avoided_per_day": null,
+   "minutes_per_order_saved": 0.4697346857582885,
+   "one_off_hours": 120,
+   "value_ci": null,
+   "value_per_effort_week": 2957.4195707070394,
+   "value_per_month": 5914.839141414079
+  },
+  {
+   "area": "Warehouse",
+   "clear": null,
+   "effort_weeks": 3,
+   "key": "routing",
+   "label": "Pick routes over the picks (2-opt)",
+   "late_avoided_per_day": null,
+   "minutes_per_order_saved": 0.6859812441676925,
+   "one_off_hours": null,
+   "value_ci": null,
+   "value_per_effort_week": 2879.2627244668693,
+   "value_per_month": 8637.788173400608
+  },
+  {
+   "area": "Route planning",
+   "clear": true,
+   "effort_weeks": 3,
+   "key": "service_model",
+   "label": "Stop-time model with address history",
+   "late_avoided_per_day": 63.333333333333336,
+   "reject_share_without": 0.023645889360345822,
+   "value_ci": [
+    5210.240706946328,
+    12064.554358370446
+   ],
+   "value_per_effort_week": 2859.398399653781,
+   "value_per_month": 8578.195198961343
+  },
+  {
+   "area": "Warehouse",
+   "clear": null,
+   "effort_weeks": 2,
+   "key": "batching",
+   "label": "Savings batching onto carts",
+   "late_avoided_per_day": null,
+   "minutes_per_order_saved": 0.08091859292324766,
+   "one_off_hours": null,
+   "value_ci": null,
+   "value_per_effort_week": 509.4582912457736,
+   "value_per_month": 1018.9165824915472
+  },
+  {
+   "area": "Route planning",
+   "clear": false,
+   "effort_weeks": 2,
+   "key": "drift_retrain",
+   "label": "Drift alarms with early retraining",
+   "late_avoided_per_day": 3.8472222222222223,
+   "reject_share_without": 0.05072810215342935,
+   "value_ci": [
+    -1818.3759821696317,
+    3129.2152604163575
+   ],
+   "value_per_effort_week": 320.6602443371425,
+   "value_per_month": 641.320488674285
+  },
+  {
+   "area": "Route planning",
+   "clear": false,
+   "effort_weeks": 1,
+   "key": "fallback",
+   "label": "Fallback table during estimator outages",
+   "late_avoided_per_day": 1.4583333333333333,
+   "reject_share_without": 0.05314846909300982,
+   "value_ci": [
+    -75.2601395436821,
+    1047.2035993583097
+   ],
+   "value_per_effort_week": 320.2018094689549,
+   "value_per_month": 320.2018094689549
+  },
+  {
+   "area": "Route planning",
+   "clear": false,
+   "effort_weeks": 2,
+   "key": "weekly_retrain",
+   "label": "Weekly retraining through a gate",
+   "late_avoided_per_day": 8.597222222222221,
+   "reject_share_without": 0.05257076834199884,
+   "value_ci": [
+    -2812.75712992674,
+    3286.88653936853
+   ],
+   "value_per_effort_week": 277.6430331971324,
+   "value_per_month": 555.2860663942648
+  },
+  {
+   "area": "Route planning",
+   "clear": true,
+   "effort_weeks": 3,
+   "key": "availability_model",
+   "label": "Driver availability model for rostering",
+   "late_avoided_per_day": 3.4305555555555554,
+   "reject_share_without": 0.060001195242933125,
+   "value_ci": [
+    -9283.548853786018,
+    -2532.7176842040517
+   ],
+   "value_per_effort_week": -1900.826600178316,
+   "value_per_month": -5702.4798005349485
+  },
+  {
+   "area": "Route planning",
+   "clear": true,
+   "effort_weeks": 1,
+   "key": "quantile_choice",
+   "label": "Serve a chosen quantile instead of the mean",
+   "late_avoided_per_day": 13.833333333333334,
+   "reject_share_without": 0.06528018486424032,
+   "value_ci": [
+    -8734.263601210945,
+    -3138.0452345344393
+   ],
+   "value_per_effort_week": -5775.427380136735,
+   "value_per_month": -5775.427380136735
+  }
+ ],
+ "selection": {
+  "grid": [
+   {
+    "a": 0.1,
+    "cost_vs_as_found_per_month": -6278.442479012205,
+    "driver_hours_per_day": 511.067116431147,
+    "late_per_day": 57.27777777777778,
+    "ok": true,
+    "q": 0.5,
+    "reject_share": 0.028217693579553376,
+    "rejected_per_day": 39.34722222222222
+   },
+   {
+    "a": 0.2,
+    "cost_vs_as_found_per_month": -11840.258016220127,
+    "driver_hours_per_day": 497.68278628717235,
+    "late_per_day": 59.583333333333336,
+    "ok": true,
+    "q": 0.5,
+    "reject_share": 0.034263630749616525,
+    "rejected_per_day": 47.77777777777778
+   },
+   {
+    "a": 0.35,
+    "cost_vs_as_found_per_month": -15752.044506952328,
+    "driver_hours_per_day": 485.7210474509423,
+    "late_per_day": 64.26388888888889,
+    "ok": true,
+    "q": 0.5,
+    "reject_share": 0.04155461264168609,
+    "rejected_per_day": 57.94444444444444
+   },
+   {
+    "a": 0.5,
+    "cost_vs_as_found_per_month": -18445.436946646936,
+    "driver_hours_per_day": 475.6234476818507,
+    "late_per_day": 71.76388888888889,
+    "ok": true,
+    "q": 0.5,
+    "reject_share": 0.04786947947170262,
+    "rejected_per_day": 66.75
+   },
+   {
+    "a": 0.1,
+    "cost_vs_as_found_per_month": -14580.544632487545,
+    "driver_hours_per_day": 494.65833821091707,
+    "late_per_day": 30.65277777777778,
+    "ok": true,
+    "q": 0.6,
+    "reject_share": 0.0446622442678141,
+    "rejected_per_day": 62.27777777777778
+   },
+   {
+    "a": 0.2,
+    "cost_vs_as_found_per_month": -18928.456335935818,
+    "driver_hours_per_day": 481.95612150132297,
+    "late_per_day": 32.583333333333336,
+    "ok": true,
+    "q": 0.6,
+    "reject_share": 0.05321819159744218,
+    "rejected_per_day": 74.20833333333333
+   },
+   {
+    "a": 0.35,
+    "cost_vs_as_found_per_month": -22789.369441817966,
+    "driver_hours_per_day": 470.21472091549265,
+    "late_per_day": 34.458333333333336,
+    "ok": false,
+    "q": 0.6,
+    "reject_share": 0.06154505069822108,
+    "rejected_per_day": 85.81944444444444
+   },
+   {
+    "a": 0.5,
+    "cost_vs_as_found_per_month": -25399.099017236094,
+    "driver_hours_per_day": 460.7887285002635,
+    "late_per_day": 37.875,
+    "ok": false,
+    "q": 0.6,
+    "reject_share": 0.06878623080141039,
+    "rejected_per_day": 95.91666666666667
+   },
+   {
+    "a": 0.1,
+    "cost_vs_as_found_per_month": -13490.265797768585,
+    "driver_hours_per_day": 493.0896387520672,
+    "late_per_day": 13.26388888888889,
+    "ok": true,
+    "q": 0.7,
+    "reject_share": 0.05842745871431702,
+    "rejected_per_day": 81.47222222222223
+   },
+   {
+    "a": 0.2,
+    "cost_vs_as_found_per_month": -17980.597198732954,
+    "driver_hours_per_day": 480.5372451049696,
+    "late_per_day": 14.38888888888889,
+    "ok": false,
+    "q": 0.7,
+    "reject_share": 0.0666746349528875,
+    "rejected_per_day": 92.97222222222223
+   },
+   {
+    "a": 0.35,
+    "cost_vs_as_found_per_month": -22014.098502881665,
+    "driver_hours_per_day": 468.95983211029505,
+    "late_per_day": 14.375,
+    "ok": false,
+    "q": 0.7,
+    "reject_share": 0.07507121655809877,
+    "rejected_per_day": 104.68055555555556
+   },
+   {
+    "a": 0.5,
+    "cost_vs_as_found_per_month": -25222.3084426187,
+    "driver_hours_per_day": 459.0831571831986,
+    "late_per_day": 14.055555555555555,
+    "ok": false,
+    "q": 0.7,
+    "reject_share": 0.08304946313671586,
+    "rejected_per_day": 115.80555555555556
+   }
+  ],
+  "max_reject_share": 0.06,
+  "pick": {
+   "a": 0.2,
+   "cost_vs_as_found_per_month": -18928.456335935818,
+   "driver_hours_per_day": 481.95612150132297,
+   "late_per_day": 32.583333333333336,
+   "ok": true,
+   "q": 0.6,
+   "reject_share": 0.05321819159744218,
+   "rejected_per_day": 74.20833333333333
+  },
+  "served": {
+   "a": 0.2,
+   "q": 0.6
+  },
+  "served_is_pick": true
+ },
+ "sensitivity": [
+  {
+   "best_availability": 0.5,
+   "best_quantile": 0.5,
+   "late_cost_eur": 3,
+   "late_per_day": 71.76388888888889
+  },
+  {
+   "best_availability": 0.2,
+   "best_quantile": 0.6,
+   "late_cost_eur": 6,
+   "late_per_day": 32.583333333333336
+  },
+  {
+   "best_availability": 0.2,
+   "best_quantile": 0.6,
+   "late_cost_eur": 10,
+   "late_per_day": 32.583333333333336
+  },
+  {
+   "best_availability": 0.2,
+   "best_quantile": 0.6,
+   "late_cost_eur": 15,
+   "late_per_day": 32.583333333333336
+  },
+  {
+   "best_availability": 0.1,
+   "best_quantile": 0.7,
+   "late_cost_eur": 25,
+   "late_per_day": 13.26388888888889
+  }
+ ]
+}

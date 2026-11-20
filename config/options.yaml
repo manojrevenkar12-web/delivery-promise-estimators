@@ -1,0 +1,15 @@
+# Effort estimates for the management view, in person-weeks for this team. Stated assumptions, not measurements:
+# they rank the options; the value side comes from the evaluation.
+estimators:
+  travel_model: {effort_weeks: 4, ablation: platform_router_travel, label: "Travel-time correction by zone and hour"}
+  service_model: {effort_weeks: 3, ablation: platform_rule_service, label: "Stop-time model with address history"}
+  quantile_choice: {effort_weeks: 1, ablation: platform_mean, label: "Serve a chosen quantile instead of the mean"}
+  availability_model: {effort_weeks: 3, ablation: platform_rule_availability, label: "Driver availability model for rostering"}
+  drift_retrain: {effort_weeks: 2, ablation: platform_weekly_only, label: "Drift alarms with early retraining"}
+  weekly_retrain: {effort_weeks: 2, ablation: platform_no_retrain, label: "Weekly retraining through a gate"}
+  fallback: {effort_weeks: 1, ablation: platform_no_fallback, label: "Fallback table during estimator outages"}
+warehouse:
+  routing: {effort_weeks: 3, ablation: platform_s_shape, label: "Pick routes over the picks (2-opt)"}
+  batching: {effort_weeks: 2, ablation: platform_fcfs, label: "Savings batching onto carts"}
+  reslot: {effort_weeks: 2, ablation: platform_no_reslot, label: "Busiest SKUs nearest pack-out", one_off_hours: 120}
+late_cost_sensitivity: [3, 6, 10, 15, 25]
